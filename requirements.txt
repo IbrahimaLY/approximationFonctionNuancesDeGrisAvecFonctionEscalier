@@ -1,1 +1,3 @@
-heroku create appname --buildpack heroku/python3.6
+python
+flask
+PIL
