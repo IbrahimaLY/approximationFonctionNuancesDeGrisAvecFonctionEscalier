@@ -1,0 +1,42 @@
+{% extends 'up_squelette.html' %}
+
+{% block title %}Upload d'images{% endblock %}
+
+{% block main %}
+<h1>Choisissez une image à Uploader :</h1>
+<div>
+	<form action="" method="post" enctype="multipart/form-data">
+    <label for="fic">Fichier</label><input id="fic" type="file" name="fic" />
+<input id="btsub" type="submit" value="Uploader" />
+</form>
+</div>
+
+{%if img is defined%}
+<div>
+	<img src="{{ url_for('static', filename= img ) }}" alt="Techylabs"width= "50%", height="50%">
+	<form action="{{url_for('escalier')}}" method="post">
+		<select name="gris">
+		<option value="16"> 16 niveaux de gris</option>
+		<option value="4"> 4 niveaux de gris</option>
+		<option value="3"> 3 niveaux de gris</option>
+		<option value="2"> 2 niveaux de gris</option>
+	</select>
+	<input type="submit" value="Fonction Escalier">
+	</form>
+	
+</div>
+{% endif  %}
+
+{%if img_gris is defined%}
+	<div>
+		<h3>Image obtenue avec {{niveau}} niveaux de gris</h3>
+		<img src="{{ url_for('static', filename= img_gris ) }}" alt="Techylabs"width= "50%", height="50%">
+	</div>
+	
+
+{% endif  %}
+
+
+
+
+{% endblock %}
