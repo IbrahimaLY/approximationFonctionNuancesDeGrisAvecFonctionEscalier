@@ -1,1 +1,1 @@
-heroku create appname --buildpack heroku/python
+heroku create appname --buildpack heroku/python3.6
